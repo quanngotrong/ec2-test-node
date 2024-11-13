@@ -13,6 +13,9 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/analytic/get-hostname") {
     res.writeHead(200);
     res.end(JSON.stringify({ hostname }));
+  } else if (req.url === "/health-check") {
+    res.writeHead(200);
+    res.end(JSON.stringify({ success: true }));
   } else {
     res.writeHead(404);
     res.end(JSON.stringify({ error: "Not Found" }));
